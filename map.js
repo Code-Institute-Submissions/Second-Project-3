@@ -1,36 +1,23 @@
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places">
+let marker;
+
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -33.866, lng: 151.196 },
-    zoom: 15,
+    zoom: 13,
+    center: { lat: 59.325, lng: 18.07 },
   });
-  const request = {
-    placeId: "ChIJN1t_tDeuEmsRUsoyG83frY4",
-    fields: ["name", "formatted_address", "place_id", "geometry"],
-  };
-  const infowindow = new google.maps.InfoWindow();
-  const service = new google.maps.places.PlacesService(map);
-  service.getDetails(request, (place, status) => {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      const marker = new google.maps.Marker({
-        map,
-        position: place.geometry.location,
-      });
-      google.maps.event.addListener(marker, "click", function () {
-        infowindow.setContent(
-          "<div><strong>" +
-            place.name +
-            "</strong><br>" +
-            "Place ID: " +
-            place.place_id +
-            "<br>" +
-            place.formatted_address +
-            "</div>"
-        );
-        infowindow.open(map, this);
-      });
-    }
+  marker = new google.maps.Marker({
+    map,
+    draggable: true,
+    animation: google.maps.Animation.DROP,
+    position: { lat: 59.327, lng: 18.067 },
   });
+  marker.addListener("click", toggleBounce);
+}
+
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
 }
