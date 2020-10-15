@@ -29,7 +29,7 @@ table {
   display: -ms-flexbox;
   display: flex;
   left: 0;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 440px;
   z-index: 1;
