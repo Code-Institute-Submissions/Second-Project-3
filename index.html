@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<title>Tourist Website</title>
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iefaR76RYYOPI9PibIJf9GkxOgClHUg&callback=initMap&libraries=places&v=weekly"
-		defer></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<script src="map.js"></script>
-</head>
-
-<body>
-	<div id="map"></div>
-</body>
-
+  <head>
+    <title>Places Search Box</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iefaR76RYYOPI9PibIJf9GkxOgClHUg&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="map.js"></script>
+  </head>
+  <body>
+    <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="Type in destination"
+    />
+    <div id="map"></div>
+  </body>
 </html>
