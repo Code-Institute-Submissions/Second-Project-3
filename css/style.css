@@ -63,7 +63,7 @@ p {
 .box4:before {
   width: 0;
   height: 200%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
   left: -250px;
@@ -223,4 +223,34 @@ table {
 
 .iw_table_icon {
   text-align: right;
+}
+a:hover{
+    text-decoration:none;
+}
+.section-padding {
+	padding: 60px 0;
+}
+.bottom {
+    background-color: white;
+}
+.bottom .copyright {
+    color: #e5e5e5;
+    font-weight: 600;
+}
+.copyright a {
+    color: #ffed49;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+.bottom p {
+    margin-bottom: 0;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.copyright p span {
+    color: #d1caca;
+}
+.bottom .copyright p, .bottom .copyright a:hover{
+    color: #6c6d83;
 }
